@@ -1,0 +1,72 @@
+//**********Problem1***********
+//-----------Solution1-------
+ALGORITHM
+Var 
+set1,set2:Array of integer;
+i,j,sum,sum1,sum2:integer;
+BEGIN
+sum1:=0;
+read(set1);
+read(set2);
+FOR i FROM 1 TO set1.length-1 STEP step 1 DO
+    FOR j FROM 1 TO set2.length-1 STEP step 1 DO
+        IF(set1[i]!=set2[j]) THEN
+            sum1 := sum1+set1[i] ;
+        END_IF
+    END_FOR
+END_FOR
+Sum2=0
+FOR j FROM 1 TO set2.length-1 STEP step 1 DO
+    FOR i FROM 1 TO set1.length-1 STEP step 1 DO
+        IF(set2[j]!=set1[i]) THEN
+            sum2 := sum2+set2[j] ;
+        END_IF
+    END_FOR
+END_FOR
+sum:=sum1+sum2;
+Write(sum);
+END
+//------------solution2------------------
+ALGORITHM first_problem_second_solution
+VAR
+set1,set2 : HASH_TABLE<INTEGER,INTEGER>;
+sum,sum1,sum2,i,j : INTEGER;
+BEGIN
+Read(set1);
+Read(set2);
+FOR i FROM 1 TO set1.length-1 STEP step 1 DO
+    FOR j FROM 1 TO set2.length-1 STEP step 1 DO
+        IF(set1.get(i)!=set2.get(j)) THEN
+            sum1 := sum1+set2.get(i) ;
+        END_IF
+    END_FOR
+END_FOR
+Sum2=0
+FOR j FROM 1 TO set2.length-1 STEP step 1 DO
+    FOR i FROM 1 TO set1.length-1 STEP step 1 DO
+        IF(set2.get(j)!=set1.get(i)) THEN
+            sum2 := sum2+set2.get(j) ;
+        END_IF
+    END_FOR
+END_FOR
+sum:=sum1+sum2;
+Write(sum);
+END
+//***********************Problem2*********************
+ALGORITHM
+Var 
+set1,set2:Array of integer;
+i,j,sum:integer;
+BEGIN
+sum:=0;
+read(set1);
+read(set2);
+FOR i FROM 1 TO set1.length-1 STEP step 1 DO
+    FOR j FROM 1 TO set2.length-1 STEP step 1 DO
+        IF(set1[i]=set2[j]) THEN
+            sum := sum+2*set1[i] ;
+        END_IF
+    END_FOR
+END_FOR
+Write(sum);
+END
